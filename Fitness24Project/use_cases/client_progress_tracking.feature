@@ -1,11 +1,12 @@
 Feature: Progress Tracking
   As a client, I want to track my progress and achievements to stay motivated.
 
-  Scenario: Log fitness milestones
+Scenario: Log fitness milestones
     Given I am enrolled in "Morning Yoga"
     When I log my progress with the following details:
-      | Weight | "70kg" |
-      | BMI    | "22.5" |
+      | Progress Type | Value  |
+      | Weight        | "70kg" |
+      | BMI           | "22.5" |
     Then my progress log should update with the new entries
 
   Scenario: View achievements

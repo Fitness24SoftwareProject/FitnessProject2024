@@ -1,14 +1,16 @@
 Feature: Account Management
   As a client, I want to manage my account to track my fitness journey effectively.
 
-  Scenario: Create a new account
-    Given I am on the registration page
-    When I provide my personal details:
-      | Name           | "Emma Johnson"          |
-      | Age            | "30"                    |
-      | Fitness Goals  | "Weight loss and toning" |
-      | Dietary Prefs  | "Vegetarian"            |
-    Then my account should be created with the provided information
+Scenario: Create a new account
+  Given I am on the registration page
+  When I provide my personal details:
+    | Username      | emma.johnson         |
+    | Password      | mypassword123        |
+    | Name          | Emma Johnson         |
+    | Age           | 30                   |
+    | Fitness Goals | Weight loss          |
+    | Dietary Prefs | Vegetarian           |
+  Then my account should be created with the provided information
 
   Scenario: Update account details
     Given I have an account with the name "Emma Johnson"

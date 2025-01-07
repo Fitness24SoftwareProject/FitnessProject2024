@@ -18,5 +18,5 @@ And the tip "Quick Weight Loss Tricks" should be marked as rejected
 Scenario: Handle user feedback
 Given I am logged in as an admin
 When I navigate to the user feedback page
-Then I should see a list of user feedback, including comments from "Alice Johnson" and "Bob Lee"
+Then I should see a list of user feedback, including comments from "Hasan" and "Sidra"
 And I should be able to respond to feedback
