@@ -1,62 +1,58 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
   <groupId>Fitness24</groupId>
   <artifactId>Fitness24Project</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  
   <properties>
-  <sonar.organization>fitness24softwareproject</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-</properties> 
-
-
+    <sonar.organization>fitness24softwareproject</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  </properties> 
 
   <dependencies>
- 
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.13.2</version>
-    <scope>test</scope>
-</dependency>
-  
-  <dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-java</artifactId>
-    <version>7.20.1</version>
-</dependency>
-
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-junit</artifactId>
-    <version>7.20.1</version>
-    <scope>test</scope>
-</dependency>
-
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-picocontainer</artifactId>
-    <version>7.20.1</version>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
     
-</dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>7.20.1</version>
+    </dependency>
 
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-core</artifactId>
-    <version>7.20.1</version>
-</dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>7.20.1</version>
+      <scope>test</scope>
+    </dependency>
 
- <dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-gherkin</artifactId>
-    <version>7.20.1</version>
-</dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-picocontainer</artifactId>
+      <version>7.20.1</version>
+    </dependency>
 
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-core</artifactId>
+      <version>7.20.1</version>
+    </dependency>
 
-  
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-gherkin</artifactId>
+      <version>7.20.1</version>
+    </dependency>
   </dependencies>
-<build>
+
+  <build>
     <plugins>
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -66,7 +62,4 @@
     </plugins>
   </build>
   
-  
 </project>
-
-
