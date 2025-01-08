@@ -1,4 +1,4 @@
-Fitness24Project.acceptance_test;
+package Fitness24Project.acceptance_test;
 
 import java.util.Scanner;
 
