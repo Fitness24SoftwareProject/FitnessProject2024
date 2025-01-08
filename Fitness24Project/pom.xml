@@ -55,24 +55,29 @@
   
    <build>
     <plugins>
-      <!-- Jacoco Plugin -->
+      <!-- Jacoco Plugin for Code Coverage -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.7</version>
         <executions>
+          <!-- Prepares the property pointing to the JaCoCo runtime agent -->
           <execution>
             <goals>
               <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+
+          <!-- Generates the code coverage report after tests are run -->
+          <execution>
+            <id>generate-report</id>
+            <phase>verify</phase>
+            <goals>
               <goal>report</goal>
             </goals>
-            <configuration>
-              <dataFile>${project.build.directory}/jacoco.exec</dataFile>
-              <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
-            </configuration>
           </execution>
         </executions>
       </plugin>
+
 
       <!-- Maven Compiler Plugin -->
       <plugin>
