@@ -6,6 +6,7 @@ public class FitnessProgram {
     private String difficulty;
     private String goals;
     private double price;
+    int yes;
 
     // Constructor
     public FitnessProgram(String title, int duration2, String difficulty, String goals, double price) {
