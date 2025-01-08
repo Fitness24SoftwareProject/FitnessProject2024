@@ -13,14 +13,14 @@ public class MainClass {
     boolean exit = false;
 
     while (!exit) {
-        logger.info("=============================");
+        
         logger.info("            Main Menu            ");
-        logger.info("=============================");
+       
         logger.info("1. Admin Login");
         logger.info("2. Instructor Login");
         logger.info("3. Client Login");
         logger.info("4. Exit");
-        logger.info("=============================");
+       
         logger.info("Enter your choice: ");
         int roleChoice = scanner.nextInt();
         scanner.nextLine(); // Consume newline
