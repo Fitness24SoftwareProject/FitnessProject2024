@@ -1,61 +1,61 @@
 package Fitness24Project.acceptance_test;
 
 import java.util.Scanner;
-
+import java.util.logging.Logger;
 public class MainClass {
     private static MyApplication myApplication = new MyApplication();
 	private static MyInstructor myInstructor;
-	
+	 private static final Logger logger = Logger.getLogger(MainClass.class.getName());
 	public static void main(String[] args) {
-	    Scanner scanner = new Scanner(System.in);
-	    MyApplication admin = new MyApplication(); // Admin instance
+    Scanner scanner = new Scanner(System.in);
+    MyApplication admin = new MyApplication(); // Admin instance
 
-	    boolean exit = false;
+    boolean exit = false;
 
-	    while (!exit) {
-	        //System.out.println("\n" + repeat("=", 30));
-	        System.out.println("            Main Menu            ");
-	        System.out.println(repeat("=", 30));
-	        System.out.println("1. Admin Login");
-	        System.out.println("2. Instructor Login");
-	        System.out.println("3. Client Login");
-	        System.out.println("4. Exit");
-	        System.out.println(repeat("=", 30));
-	        System.out.print("Enter your choice: ");
-	        int roleChoice = scanner.nextInt();
-	        scanner.nextLine(); // Consume newline
+    while (!exit) {
+        logger.info("\n" + repeat("=", 30));
+        logger.info("            Main Menu            ");
+        logger.info(repeat("=", 30));
+        logger.info("1. Admin Login");
+        logger.info("2. Instructor Login");
+        logger.info("3. Client Login");
+        logger.info("4. Exit");
+        logger.info(repeat("=", 30));
+        logger.info("Enter your choice: ");
+        int roleChoice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
 
-	        switch (roleChoice) {
-	            case 1:
-	                if (adminLogin(scanner, admin)) {
-	                    printAdminMenu(scanner, admin);
-	                } else {
-	                    System.out.println("Invalid admin credentials.");
-	                }
-	                break;
-	            case 2:
-	            	 if (login(scanner, admin, "Instructor")) {
-	            		 handleInstructorLogin(scanner, new MyInstructor("demoInstructor", "1234", "Myarr"));
-	                    }
-	                    break;
+        switch (roleChoice) {
+            case 1:
+                if (adminLogin(scanner, admin)) {
+                    printAdminMenu(scanner, admin);
+                } else {
+                    logger.warning("Invalid admin credentials.");
+                }
+                break;
+            case 2:
+                if (login(scanner, admin, "Instructor")) {
+                    handleInstructorLogin(scanner, new MyInstructor("demoInstructor", "1234", "Myarr"));
+                }
+                break;
 
-	            case 3:
-	            	   if (login(scanner, admin, "Client")) {
-	                        handleClientLogin(scanner, new MyClient("demoClient", "1234", "Saffad"));
-	                    }
-	                    break;
+            case 3:
+                if (login(scanner, admin, "Client")) {
+                    handleClientLogin(scanner, new MyClient("demoClient", "1234", "Saffad"));
+                }
+                break;
 
-	            case 4:
-	                exit = true;
-	                System.out.println("Exiting system. Goodbye!");
-	                break;
-	            default:
-	                System.out.println("Invalid choice. Please try again.");
-	        }
-	    }
-	    scanner.close();
-	}
-	
+            case 4:
+                exit = true;
+                logger.info("Exiting system. Goodbye!");
+                break;
+            default:
+                logger.warning("Invalid choice. Please try again.");
+        }
+    }
+    scanner.close();
+}
+
 	
 	
 	   private static boolean login(Scanner scanner, MyApplication admin, String userType) {
