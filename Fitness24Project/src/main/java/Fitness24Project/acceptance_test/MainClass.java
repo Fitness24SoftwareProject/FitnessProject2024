@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class MainClass {
     private static MyApplication myApplication = new MyApplication();
 	private static MyInstructor myInstructor;
-
-
+	
 	public static void main(String[] args) {
 	    Scanner scanner = new Scanner(System.in);
 	    MyApplication admin = new MyApplication(); // Admin instance
@@ -14,7 +13,7 @@ public class MainClass {
 	    boolean exit = false;
 
 	    while (!exit) {
-	        System.out.println("\n" + repeat("=", 30));
+	        //System.out.println("\n" + repeat("=", 30));
 	        System.out.println("            Main Menu            ");
 	        System.out.println(repeat("=", 30));
 	        System.out.println("1. Admin Login");
