@@ -52,10 +52,9 @@
     </dependency>
   </dependencies>
 
-  
-   <build>
+  <build>
     <plugins>
-      <!-- Jacoco Plugin -->
+      <!-- Jacoco Plugin for Code Coverage -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -63,13 +62,27 @@
         <executions>
           <execution>
             <goals>
-              <goal>prepare-agent</goal>
-              <goal>report</goal>
+              <goal>prepare-agent</goal>  <!-- Prepare agent to collect coverage data -->
+              <goal>report</goal>         <!-- Generate coverage report after tests -->
             </goals>
             <configuration>
               <dataFile>${project.build.directory}/jacoco.exec</dataFile>
               <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
             </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- SonarQube Plugin for Analysis -->
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.9.0.2155</version> <!-- Latest stable version -->
+        <executions>
+          <execution>
+            <goals>
+              <goal>sonar</goal>  <!-- Run SonarQube analysis -->
+            </goals>
           </execution>
         </executions>
       </plugin>
@@ -87,7 +100,9 @@
     </plugins>
   </build>
 
-  
+  <properties>
+    <!-- JaCoCo coverage report path for SonarQube -->
+    <sonar.jacoco.reportPaths>${project.build.directory}/jacoco.exec</sonar.jacoco.reportPaths>
+  </properties>
 
-  
 </project>
