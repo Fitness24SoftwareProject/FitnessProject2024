@@ -159,7 +159,13 @@ public class MainClass {
     }
    //Instructor Menu Ends
     
-    
+     private static String repeat(String str, int count) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            builder.append(str);
+        }
+        return builder.toString();
+    }
     
    
 
