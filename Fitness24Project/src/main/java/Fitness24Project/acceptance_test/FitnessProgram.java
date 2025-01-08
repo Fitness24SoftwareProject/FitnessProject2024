@@ -71,8 +71,7 @@ public class FitnessProgram {
     }
 
 	public String getProgramName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.title;
 	}
 }
 
